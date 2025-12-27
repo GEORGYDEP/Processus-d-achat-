@@ -1,0 +1,5 @@
+{
+  "name": "ComptaSim - Le Cycle d'Achat",
+  "description": "Une application pédagogique interactive pour les élèves de 4e année en comptabilité (Belgique), retraçant les étapes d'un cycle d'achat de 5 bureaux, de la demande interne au paiement final, respectant la législation belge.",
+  "requestFramePermissions": []
+}
