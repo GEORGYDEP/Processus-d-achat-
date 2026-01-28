@@ -190,10 +190,10 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
                 <p className="text-xs text-slate-500">TVA: {SUPPLIER_BUROTEC.tva}</p>
             </div>
             <div className="bg-slate-50 p-4 rounded border-l-4 border-blue-300">
-                <p className="text-[9px] text-slate-400 font-bold uppercase mb-1">Référence devis</p>
-                <p className="font-bold text-blue-700">DEV-2025-331</p>
-                <p className="text-xs text-slate-500 mt-2">Date commande: 05/12/2025</p>
-                <p className="text-xs text-slate-500">Livraison souhaitée: 08/01/2026</p>
+                <p className="text-[9px] text-slate-400 font-bold uppercase mb-1">Détails logistiques</p>
+                <p className="text-xs text-slate-600"><span className="font-semibold">Date de commande :</span> 05/12/2025</p>
+                <p className="text-xs text-slate-600"><span className="font-semibold">Réf. Devis :</span> <span className="text-blue-700 font-bold">DEV-2025-331</span></p>
+                <p className="text-xs text-slate-600"><span className="font-semibold">Lieu de livraison :</span> <a href="#" className="text-blue-600 hover:underline">Frameries (Bureau 1.02)</a></p>
             </div>
         </div>
         <div className="mb-4">
@@ -229,14 +229,43 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
                     <td className="p-2 text-right">60,00 €</td>
                 </tr>
             </tbody>
+            <tfoot className="bg-slate-50">
+                <tr>
+                    <td colSpan={3} className="p-2 text-right font-bold text-xs uppercase text-slate-500">Sous-total HT</td>
+                    <td className="p-2 text-right font-bold">2.268,00 €</td>
+                </tr>
+                <tr>
+                    <td colSpan={3} className="p-2 text-right font-bold text-xs uppercase text-slate-500">TVA (21%)</td>
+                    <td className="p-2 text-right font-bold">476,28 €</td>
+                </tr>
+            </tfoot>
         </table>
-        <div className="bg-slate-900 text-white p-4 rounded flex justify-between items-center mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-widest">Montant Total de la commande (HTVA) :</span>
-            <span className="text-2xl font-black">2.268,00 €</span>
+        <div className="bg-slate-900 text-white p-4 rounded flex justify-between items-center mb-6">
+            <span className="text-[10px] font-bold uppercase tracking-widest">Montant Total TTC :</span>
+            <span className="text-2xl font-black">2.744,28 €</span>
         </div>
-        <div className="text-xs text-slate-500 border-t pt-4">
-            <p className="font-bold mb-1">Conditions de paiement:</p>
-            <p>50% à la commande • 30% avant livraison • 20% solde après livraison</p>
+        <div className="grid grid-cols-2 gap-6 text-xs border-t pt-4">
+            <div className="bg-blue-50 p-4 rounded border border-blue-100">
+                <p className="font-bold text-blue-800 mb-2 uppercase text-[10px] tracking-wide">Conditions de paiement</p>
+                <ul className="text-slate-600 space-y-1">
+                    <li><span className="font-semibold">50%</span> à la commande (1.372,14 €)</li>
+                    <li><span className="font-semibold">30%</span> avant livraison (823,28 €)</li>
+                    <li><span className="font-semibold">20%</span> solde après livraison (548,86 €)</li>
+                </ul>
+                <p className="text-slate-500 mt-2 text-[10px]">Mode: Virement bancaire</p>
+            </div>
+            <div className="bg-green-50 p-4 rounded border border-green-100">
+                <p className="font-bold text-green-800 mb-2 uppercase text-[10px] tracking-wide">Conditions de livraison</p>
+                <ul className="text-slate-600 space-y-1">
+                    <li><span className="font-semibold">Date prévue :</span> 08/01/2026</li>
+                    <li><span className="font-semibold">Adresse :</span> Rue Montavaux 122, 7080 Frameries</li>
+                    <li><span className="font-semibold">Incoterm :</span> DDP (Franco de port)</li>
+                </ul>
+                <p className="text-slate-500 mt-2 text-[10px]">Délais indicatifs selon CGV</p>
+            </div>
+        </div>
+        <div className="mt-4 text-[10px] text-slate-400 italic text-center border-t pt-4">
+            Document interne à valeur contractuelle. Engage la société {BUYER.name} à réception de la marchandise.
         </div>
     </div>
   );
