@@ -182,6 +182,30 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
                  <p className="text-[9px] text-slate-500 italic">Document généré via Odoo ERP</p>
             </div>
         </div>
+        <table className="w-full text-sm mb-6">
+            <thead className="bg-slate-900 text-white text-[10px] uppercase tracking-widest">
+                <tr>
+                    <th className="p-2 text-left">Désignation</th>
+                    <th className="p-2 text-center">Qté</th>
+                    <th className="p-2 text-right">P.U. HT</th>
+                    <th className="p-2 text-right">Total HT</th>
+                </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+                <tr>
+                    <td className="p-2 font-medium">Bureau Professionnel 160×80 (Chêne Naturel)</td>
+                    <td className="p-2 text-center font-bold">5</td>
+                    <td className="p-2 text-right">441,60 €</td>
+                    <td className="p-2 text-right">2.208,00 €</td>
+                </tr>
+                <tr>
+                    <td className="p-2 font-medium">Installation & Réglages</td>
+                    <td className="p-2 text-center font-bold">1</td>
+                    <td className="p-2 text-right">60,00 €</td>
+                    <td className="p-2 text-right">60,00 €</td>
+                </tr>
+            </tbody>
+        </table>
         <div className="bg-slate-900 text-white p-4 rounded flex justify-between items-center mb-8">
             <span className="text-[10px] font-bold uppercase tracking-widest">Montant Total de la commande (HTVA) :</span>
             <span className="text-2xl font-black">2.268,00 €</span>

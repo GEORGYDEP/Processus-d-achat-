@@ -170,7 +170,7 @@ export const SCENARIO_STEPS: PurchaseStep[] = [
     questions: [
       {
         question: "Quel est l'impact de cette validation dans le logiciel ?",
-        options: ["Cela paie le fournisseur", "Cela augmente le stock et permet à la compta de valider la facture finale", "Cela envoie un mail au patron", "Cela crée un nouveau devis"],
+        options: ["Cela paie le fournisseur", "Cela confirme la réception des bureaux commandés et permet à la compta de valider la facture finale", "Cela envoie un mail au patron", "Cela crée un nouveau devis"],
         correctAnswer: 1,
         explanation: "La réception informatique fait le lien entre le physique (entrepôt) et le financier (comptabilité)."
       }
