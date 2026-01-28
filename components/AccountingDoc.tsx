@@ -172,7 +172,7 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
 
   const renderPO = () => (
     <div className="bg-white p-8 doc-shadow border-2 border-slate-900 max-w-2xl mx-auto rounded-sm animate-fade">
-        <div className="flex justify-between items-center mb-8 border-b-8 border-slate-900 pb-4">
+        <div className="flex justify-between items-center mb-6 border-b-8 border-slate-900 pb-4">
             <div>
                 <h2 className="text-3xl font-black uppercase tracking-tighter">Bon de Commande</h2>
                 <p className="font-mono text-sm bg-slate-900 text-white px-2 py-0.5 inline-block">N° BC-2025-0097</p>
@@ -181,6 +181,23 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
                  <p className="font-black text-sm uppercase">{BUYER.name}</p>
                  <p className="text-[9px] text-slate-500 italic">Document généré via Odoo ERP</p>
             </div>
+        </div>
+        <div className="grid grid-cols-2 gap-6 mb-6 text-sm">
+            <div className="bg-slate-50 p-4 rounded border-l-4 border-slate-300">
+                <p className="text-[9px] text-slate-400 font-bold uppercase mb-1">Fournisseur</p>
+                <p className="font-bold">{SUPPLIER_BUROTEC.name}</p>
+                <p className="text-xs text-slate-600">{SUPPLIER_BUROTEC.address}</p>
+                <p className="text-xs text-slate-500">TVA: {SUPPLIER_BUROTEC.tva}</p>
+            </div>
+            <div className="bg-slate-50 p-4 rounded border-l-4 border-blue-300">
+                <p className="text-[9px] text-slate-400 font-bold uppercase mb-1">Référence devis</p>
+                <p className="font-bold text-blue-700">DEV-2025-331</p>
+                <p className="text-xs text-slate-500 mt-2">Date commande: 05/12/2025</p>
+                <p className="text-xs text-slate-500">Livraison souhaitée: 08/01/2026</p>
+            </div>
+        </div>
+        <div className="mb-4">
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Détail des marchandises commandées</p>
         </div>
         <table className="w-full text-sm mb-6">
             <thead className="bg-slate-900 text-white text-[10px] uppercase tracking-widest">
@@ -193,22 +210,33 @@ const AccountingDoc: React.FC<AccountingDocProps> = ({ type, isSigned }) => {
             </thead>
             <tbody className="divide-y divide-slate-100">
                 <tr>
-                    <td className="p-2 font-medium">Bureau Professionnel 160×80 (Chêne Naturel)</td>
+                    <td className="p-3">
+                        <p className="font-medium">Bureau Professionnel 160×80</p>
+                        <p className="text-xs text-slate-500">Plateau: Chêne Naturel | Piétement: Métal noir</p>
+                        <p className="text-xs text-slate-500">Dimensions: 160 × 80 × 75 cm | Garantie: 10 ans</p>
+                    </td>
                     <td className="p-2 text-center font-bold">5</td>
                     <td className="p-2 text-right">441,60 €</td>
                     <td className="p-2 text-right">2.208,00 €</td>
                 </tr>
                 <tr>
-                    <td className="p-2 font-medium">Installation & Réglages</td>
+                    <td className="p-3">
+                        <p className="font-medium">Installation & Réglages</p>
+                        <p className="text-xs text-slate-500">Montage sur site, réglages ergonomiques inclus</p>
+                    </td>
                     <td className="p-2 text-center font-bold">1</td>
                     <td className="p-2 text-right">60,00 €</td>
                     <td className="p-2 text-right">60,00 €</td>
                 </tr>
             </tbody>
         </table>
-        <div className="bg-slate-900 text-white p-4 rounded flex justify-between items-center mb-8">
+        <div className="bg-slate-900 text-white p-4 rounded flex justify-between items-center mb-4">
             <span className="text-[10px] font-bold uppercase tracking-widest">Montant Total de la commande (HTVA) :</span>
             <span className="text-2xl font-black">2.268,00 €</span>
+        </div>
+        <div className="text-xs text-slate-500 border-t pt-4">
+            <p className="font-bold mb-1">Conditions de paiement:</p>
+            <p>50% à la commande • 30% avant livraison • 20% solde après livraison</p>
         </div>
     </div>
   );
